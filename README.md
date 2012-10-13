@@ -3,6 +3,15 @@ GitEnforcer
 
 GitEnforcer is a small bot that you would run on your own server to monitor github pull requests. It comes with a very basic interface to allow you to watch or unwatch your repos. Any time a pull request is created, updated, or commented on, all defined middleware are run. If any middleware fails, the pull request status is set to failed with the reason returned by that failing middleware. If they all pass, the merge button remains green.
 
+Configuration
+=============
+
+Configuration is an object containing the following parameters
+* username - the username to authenticate as in github
+* password - the password associated with the username (it only uses basic auth)
+* organization (optional) - if you want to monitor an organization rather than a single user, specify one here
+* baseUrl - the base url (including hostname and port) of gitenforcer, i.e. http://enforcer.yourserver.com:8000
+
 Middleware
 ==========
 
@@ -21,4 +30,13 @@ Next is the callback function you should run when your check is complete. If you
 Usage
 =====
 
+```javascript
+var gitenforcer = require('gitenforcer'),
+    app = gitenforcer(config);
+
+app.listen(3000);
+```
+
 For basic usage, see example.js
+
+To watch or unwatch a repo, visit the server in your browser.
