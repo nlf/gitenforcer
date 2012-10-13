@@ -1,0 +1,24 @@
+{
+  "name": "gitenforcer",
+  "version": "0.0.1",
+  "description": "a small bot to monitor pull requests",
+  "main": "./lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/nathan-lafreniere/node-gitenforcer.git"
+  },
+  "keywords": [
+    "git",
+    "github",
+    "pull",
+    "request"
+  ],
+  "author": "Nathan LaFreniere <quitlahok@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "async": "0.1.22",
+    "formidable": "1.0.11",
+    "github": "0.1.6",
+    "jade": "0.27.6"
+  }
+}

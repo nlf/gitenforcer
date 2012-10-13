@@ -1,0 +1,13 @@
+!!!5
+html
+  head
+  body
+    each repo in repos
+      if repo.id
+        form(action='/#{repo.name}/delete', method='post')
+          p= repo.name
+            button(type='submit') unwatch
+      else
+        form(action='/#{repo.name}', method='post')
+          p= repo.name
+            button(type='submit') watch
