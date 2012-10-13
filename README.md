@@ -11,6 +11,7 @@ Configuration is an object containing the following parameters
 * password - the password associated with the username (it only uses basic auth)
 * organization (optional) - if you want to monitor an organization rather than a single user, specify one here
 * baseUrl - the base url (including hostname and port) of gitenforcer, i.e. http://enforcer.yourserver.com:8000
+* pollInterval (optional) - if specified, in seconds, how often to poll github for new repositories to add to the admin page. if not specified, polling will not take place.
 
 Middleware
 ==========
