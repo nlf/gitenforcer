@@ -1,11 +1,11 @@
 {
   "name": "gitenforcer",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "a small bot to monitor pull requests",
   "main": "./lib/index.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/nathan-lafreniere/node-gitenforcer.git"
+    "url": "git://github.com/nlf/node-gitenforcer.git"
   },
   "keywords": [
     "git",
