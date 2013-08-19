@@ -39,13 +39,9 @@ exports.callback = function _callback(context) {
         }
 
         context.github.issues.getComments({ user: user, repo: repo, number: issue, per_page: 100 }, function (err, comments) {
-            if (!pr) {
-                context.github.pullRequests.get({ user: user, repo: repo, number: issue }, function (err, pr) {
-                    runMiddleware(context, comments, pr, req.body.repository);
-                });
-            } else {
+            context.github.pullRequests.get({ user: user, repo: repo, number: issue }, function (err, pr) {
                 runMiddleware(context, comments, pr, req.body.repository);
-            }
+            });
         });
 
         res.send(200);
