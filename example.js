@@ -1,5 +1,6 @@
-var gitenforcer = require('./lib/index'),
-    app = gitenforcer({ username: 'YOURUSER', password: 'YOURPASSWORD', baseUrl: 'YOURBASEURL' });
+var gitenforcer = require('./index'),
+    // note that you can specify either 'user' or 'org' depending on if you want to watch a username or an organization
+    app = gitenforcer({ baseUrl: 'YOURBASEURL', token: 'YOURTOKEN', user: 'YOURUSER' });
 
 // middleware to check for occurrences of the word "bacon" in comments
 function checkVotes(pull_request, comments, next) {
@@ -18,5 +19,3 @@ function checkVotes(pull_request, comments, next) {
 
 // use the middleware
 app.use(checkVotes);
-// listen on a port
-app.listen(3000);

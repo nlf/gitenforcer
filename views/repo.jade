@@ -1,0 +1,11 @@
+!!!5
+html
+  head
+  body
+    h3= repo.name
+    if repo.enforcer
+      form(action='/unenforce/#{repo.name}', method='POST')
+        button(type='submit') unenforce
+    else
+      form(action='/enforce/#{repo.name}', method='POST')
+        button(type='submit') enforce
