@@ -174,7 +174,7 @@ function runMiddleware(context, comments, pr, repo) {
         func(pr, comments, function (err) {
             if (err) return _setStatus(err);
             _run();
-        });
+        }, context.github);
     }
 
     _run();
